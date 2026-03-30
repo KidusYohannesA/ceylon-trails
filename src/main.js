@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initFooter();
   initScrollReveal();
   initSmoothScroll();
+
+  // Enable theme transitions only after initial paint is complete
+  // This prevents the white→dark animation on page load
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add('loaded');
+    });
+  });
 });
 
 

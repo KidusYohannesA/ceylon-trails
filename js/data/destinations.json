@@ -1,0 +1,134 @@
+[
+  {
+    "id": "sigiriya",
+    "name": "Sigiriya Rock Fortress",
+    "region": "Cultural Triangle",
+    "tagline": "Ancient palace in the sky",
+    "description": "Rising dramatically from the central plains, Sigiriya is a UNESCO World Heritage Site featuring the ruins of an ancient palace atop a massive 200-meter granite column. Marvel at centuries-old frescoes, the iconic Lion's Paw entrance, and breathtaking 360° views from the summit.",
+    "highlights": ["UNESCO World Heritage", "Ancient Frescoes", "Panoramic Views", "Lion's Paw Gate"],
+    "bestTime": "January – April",
+    "rating": 4.8,
+    "reviews": 2340
+  },
+  {
+    "id": "galle-fort",
+    "name": "Galle Fort",
+    "region": "Southern Coast",
+    "tagline": "Where colonial charm meets ocean breeze",
+    "description": "A UNESCO-listed 16th-century fortification on Sri Lanka's southwestern tip. Walk cobblestone streets lined with Dutch colonial architecture, vibrant boutiques, art galleries, and cafés — all surrounded by the shimmering Indian Ocean.",
+    "highlights": ["UNESCO World Heritage", "Colonial Architecture", "Boutique Shopping", "Sunset Views"],
+    "bestTime": "November – April",
+    "rating": 4.7,
+    "reviews": 1850
+  },
+  {
+    "id": "ella",
+    "name": "Ella",
+    "region": "Hill Country",
+    "tagline": "Misty peaks and tea-covered hills",
+    "description": "A charming mountain village surrounded by tea plantations, waterfalls, and hiking trails. Famous for the iconic Nine Arches Bridge, Ella Rock, and Little Adam's Peak — Ella is a haven for nature lovers and adventurers.",
+    "highlights": ["Nine Arches Bridge", "Tea Plantations", "Ella Rock Hike", "Ravana Falls"],
+    "bestTime": "January – March",
+    "rating": 4.8,
+    "reviews": 3100
+  },
+  {
+    "id": "yala",
+    "name": "Yala National Park",
+    "region": "Southeast",
+    "tagline": "Where leopards roam free",
+    "description": "Sri Lanka's most visited national park, renowned for having the highest density of leopards in the world. Spot elephants, sloth bears, crocodiles, and hundreds of bird species across diverse habitats from monsoon forests to coastal wetlands.",
+    "highlights": ["Leopard Sightings", "Elephant Herds", "Bird Watching", "Scenic Lagoons"],
+    "bestTime": "February – July",
+    "rating": 4.6,
+    "reviews": 2780
+  },
+  {
+    "id": "mirissa",
+    "name": "Mirissa",
+    "region": "Southern Coast",
+    "tagline": "Golden beaches and gentle giants",
+    "description": "A picture-perfect crescent beach on the southern coast, Mirissa is Sri Lanka's whale watching capital. Spot blue whales and dolphins, surf gentle waves, and relax under swaying palm trees. Don't miss the iconic Parrot Rock at sunset.",
+    "highlights": ["Whale Watching", "Pristine Beach", "Surfing", "Parrot Rock"],
+    "bestTime": "November – April",
+    "rating": 4.7,
+    "reviews": 2100
+  },
+  {
+    "id": "kandy",
+    "name": "Kandy",
+    "region": "Hill Country",
+    "tagline": "Sri Lanka's cultural heartbeat",
+    "description": "The last royal capital of Sri Lanka, Kandy is a UNESCO city set around a serene lake and home to the sacred Temple of the Tooth. Experience vibrant Kandyan dance performances, botanical gardens, and the heart of Sinhalese culture.",
+    "highlights": ["Temple of the Tooth", "Kandy Lake", "Cultural Dance", "Botanical Gardens"],
+    "bestTime": "January – April",
+    "rating": 4.6,
+    "reviews": 2450
+  },
+  {
+    "id": "trincomalee",
+    "name": "Trincomalee",
+    "region": "East Coast",
+    "tagline": "Where turquoise waters meet ancient temples",
+    "description": "Home to one of the world's finest natural harbors, Trincomalee boasts pristine beaches, world-class diving, and the ancient Koneswaram Temple perched on dramatic cliffs above the ocean.",
+    "highlights": ["Nilaveli Beach", "Pigeon Island", "Scuba Diving", "Koneswaram Temple"],
+    "bestTime": "May – September",
+    "rating": 4.5,
+    "reviews": 1200
+  },
+  {
+    "id": "nuwara-eliya",
+    "name": "Nuwara Eliya",
+    "region": "Hill Country",
+    "tagline": "Little England in the tropics",
+    "description": "Nestled at 1,868m altitude, this colonial hill station is the heart of Sri Lanka's tea country. Cool misty mornings, manicured gardens, Tudor-style architecture, and some of the world's finest Ceylon tea plantations.",
+    "highlights": ["Tea Factory Tours", "Gregory Lake", "Horton Plains", "Victoria Park"],
+    "bestTime": "January – April",
+    "rating": 4.5,
+    "reviews": 1680
+  },
+  {
+    "id": "anuradhapura",
+    "name": "Anuradhapura",
+    "region": "North Central",
+    "tagline": "Cradle of ancient civilization",
+    "description": "One of the oldest continuously inhabited cities in the world, Anuradhapura was Sri Lanka's capital for over a millennium. Explore massive dagobas, ancient monasteries, and the sacred Sri Maha Bodhi — the world's oldest documented tree.",
+    "highlights": ["Sri Maha Bodhi", "Ruwanwelisaya", "Ancient Ruins", "Moonstone Carvings"],
+    "bestTime": "June – September",
+    "rating": 4.6,
+    "reviews": 980
+  },
+  {
+    "id": "arugam-bay",
+    "name": "Arugam Bay",
+    "region": "East Coast",
+    "tagline": "World-class waves and wild beauty",
+    "description": "Internationally acclaimed as one of the world's top surf spots, Arugam Bay offers perfect point breaks, lagoon safaris, and a laid-back beach vibe. Beyond surfing, explore nearby Kumana National Park and ancient temple ruins.",
+    "highlights": ["Surfing Point Breaks", "Lagoon Safari", "Kumana Park", "Beach Culture"],
+    "bestTime": "April – October",
+    "rating": 4.7,
+    "reviews": 1560
+  },
+  {
+    "id": "udawalawe",
+    "name": "Udawalawe",
+    "region": "Southern Interior",
+    "tagline": "The elephant kingdom",
+    "description": "Home to over 600 wild elephants, Udawalawe National Park offers some of Sri Lanka's most reliable elephant sightings. Visit the Elephant Transit Home to watch orphaned baby elephants being prepared for release back into the wild.",
+    "highlights": ["Elephant Herds", "Transit Home", "Safari Drives", "Reservoir Views"],
+    "bestTime": "Year-round",
+    "rating": 4.5,
+    "reviews": 1340
+  },
+  {
+    "id": "jaffna",
+    "name": "Jaffna",
+    "region": "Northern Province",
+    "tagline": "A cultural treasure reborn",
+    "description": "Sri Lanka's northern capital is a vibrant tapestry of Tamil culture, colorful Hindu temples, and unique cuisine. Explore the Jaffna Fort, Nallur Kandaswamy Temple, and the stunning islands connected by causeways.",
+    "highlights": ["Nallur Temple", "Jaffna Fort", "Island Hopping", "Tamil Cuisine"],
+    "bestTime": "January – September",
+    "rating": 4.4,
+    "reviews": 720
+  }
+]

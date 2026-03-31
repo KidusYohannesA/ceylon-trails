@@ -8,16 +8,21 @@ import '../css/design-system.css';
 import '../css/components.css';
 import '../css/layouts.css';
 import '../css/pages/nav-footer.css';
+import '../css/pages/home.css';
 
 import { initNavbar } from '../js/components/navbar.js';
 import { initFooter } from '../js/components/footer.js';
+import { initHomePage } from '../js/components/home.js';
 
 // ---- Initialize Core Components ----
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initNavbar();
   initFooter();
   initScrollReveal();
   initSmoothScroll();
+
+  // Initialize home page if we're on it
+  await initHomePage();
 
   // Enable theme transitions only after initial paint is complete
   // This prevents the white→dark animation on page load

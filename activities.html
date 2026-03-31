@@ -30,7 +30,30 @@
           <p class="lead" style="color: rgba(255,255,255,0.7);">Curated adventures across Sri Lanka's diverse landscapes.</p>
         </div>
       </section>
-      <!-- Activity content will be added in Phase 3 -->
+      <section class="section container">
+        
+        <!-- Filter and Sort Bar -->
+        <div class="filter-bar reveal" id="act-filter-bar">
+          <!-- Injected via js -->
+        </div>
+
+        <div class="flex-between reveal" style="margin-bottom: var(--space-xl);">
+          <p class="text-sm text-muted" id="act-count">Loading activities...</p>
+          <div class="sort-wrapper">
+             <select id="act-sort" class="form-input" style="padding: var(--space-2xs) var(--space-md); border-radius: var(--radius-md); font-family: var(--font-accent); font-size: var(--fs-caption); background: var(--color-bg-elevated); color: var(--color-text); border: 1px solid var(--color-border);">
+                <option value="recommended">Recommended</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+             </select>
+          </div>
+        </div>
+
+        <!-- Activities Grid -->
+        <div class="activities-grid reveal" id="act-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+           <!-- Injected via js -->
+        </div>
+      </section>
     </main>
     <footer id="footer"></footer>
     <script type="module" src="/src/main.js"></script>

@@ -9,10 +9,13 @@ import '../css/components.css';
 import '../css/layouts.css';
 import '../css/pages/nav-footer.css';
 import '../css/pages/home.css';
+import '../css/pages/destinations.css';
 
 import { initNavbar } from '../js/components/navbar.js';
 import { initFooter } from '../js/components/footer.js';
 import { initHomePage } from '../js/components/home.js';
+import { initDestinationsPage } from '../js/components/destinations.js';
+import { initActivitiesPage } from '../js/components/activities.js';
 
 // ---- Initialize Core Components ----
 document.addEventListener('DOMContentLoaded', async () => {
@@ -21,8 +24,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   initScrollReveal();
   initSmoothScroll();
 
-  // Initialize home page if we're on it
-  await initHomePage();
+  // Initialize page-specific logic
+  const path = window.location.pathname;
+  if (path === '/' || path.includes('index.html')) {
+    await initHomePage();
+  } else if (path.includes('destinations.html')) {
+    await initDestinationsPage();
+  } else if (path.includes('activities.html')) {
+    await initActivitiesPage();
+  }
 
   // Enable theme transitions only after initial paint is complete
   // This prevents the white→dark animation on page load

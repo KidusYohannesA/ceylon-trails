@@ -1,0 +1,123 @@
+/* ============================================================
+   DESTINATIONS PAGE STYLES
+   ============================================================ */
+
+/* SVG Map Integration */
+.map-wrapper {
+  margin-bottom: var(--space-4xl);
+}
+
+.map-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#sri-lanka-map {
+  max-height: 450px;
+  width: auto;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+}
+
+.map-region {
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-region path {
+  fill: var(--color-bg-alt);
+  stroke: var(--color-border);
+  stroke-width: 2;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-region text {
+  fill: var(--color-text-muted);
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-anchor: middle;
+  pointer-events: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-region:hover path {
+  fill: var(--color-primary-alpha);
+  stroke: var(--color-primary-light);
+}
+
+.map-region:hover text {
+  fill: var(--color-primary-light);
+}
+
+.map-region.active path {
+  fill: var(--color-primary);
+  stroke: var(--color-primary-light);
+}
+
+.map-region.active text {
+  fill: var(--color-white);
+}
+
+/* Cultural Triangle Overlay styles */
+.map-overlay {
+  cursor: pointer;
+  pointer-events: all;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-overlay polygon {
+  fill: var(--color-secondary-alpha, rgba(212, 168, 67, 0.25));
+  stroke: var(--color-secondary);
+  stroke-dasharray: 8 6;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-overlay text {
+  fill: var(--color-text-muted);
+  font-family: var(--font-heading, serif);
+  font-size: 14px;
+  font-weight: var(--fw-bold, bold);
+  letter-spacing: var(--ls-wide);
+  pointer-events: none;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.map-overlay:hover polygon {
+  fill: rgba(212, 168, 67, 0.45);
+  stroke-dashoffset: 14; /* simple animation effect */
+}
+
+.map-overlay:hover text {
+  fill: var(--color-secondary);
+}
+
+.map-overlay.active polygon {
+  fill: rgba(212, 168, 67, 0.6);
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
+
+.map-overlay.active text {
+  fill: var(--color-white);
+}
+
+/* Destinations Grid overriding */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.destinations-grid .dest-card {
+  flex: none; /* override the carousel flex */
+  width: 100%;
+}

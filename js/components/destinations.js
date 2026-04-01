@@ -155,7 +155,10 @@ export async function initDestinationsPage() {
                          <span style="color: var(--color-secondary);">★</span> ${d.rating}
                      </div>
                   </div>
-                  <a href="/activities.html" class="btn btn-primary" style="width: 100%; margin-top: auto;">Find Activities</a>
+                  <div style="margin-top: auto; display: flex; flex-direction: column; gap: var(--space-sm);">
+                     <a href="/activities.html?destination=${encodeURIComponent(d.name)}" class="btn btn-primary" style="width: 100%;">Find Activities</a>
+                     <button type="button" class="btn btn-ghost" disabled style="width: 100%; border: 1px solid var(--color-border); color: var(--color-text); opacity: 0.6; cursor: not-allowed;">Find Accommodations</button>
+                  </div>
                </aside>
            </div>
         </div>
@@ -183,6 +186,12 @@ export async function initDestinationsPage() {
     // Initialize
     renderFilters();
     renderGrid();
+
+    // Auto-open modal if hash is present in URL
+    if (window.location.hash) {
+      const targetId = window.location.hash.substring(1); // remove '#'
+      setTimeout(() => openModal(targetId), 100); // Slight delay for smoother transition
+    }
 
   } catch (err) {
     console.error('Error loading destinations:', err);

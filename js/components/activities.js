@@ -38,6 +38,9 @@ export async function initActivitiesPage() {
     // State
     let currentCategory = 'All';
     let currentSort = sortSelect.value; // 'recommended', 'price-low', 'price-high', 'rating'
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    let targetDestination = urlParams.get('destination')?.toLowerCase() || null;
 
     // Extract unique categories
     const categories = ['All', ...new Set(activities.map(a => a.category))];
@@ -62,10 +65,19 @@ export async function initActivitiesPage() {
 
     // 2. Render Grid
     function renderGrid() {
-      // Filter
+      // Filter by Category
       let filtered = currentCategory === 'All' 
         ? [...activities]
         : activities.filter(a => a.category === currentCategory);
+
+      // Filter by Destination (URL query param)
+      if (targetDestination) {
+        filtered = filtered.filter(a => {
+           const dName = a.destination.toLowerCase();
+           const aName = a.name.toLowerCase();
+           return dName.includes(targetDestination) || targetDestination.includes(dName) || aName.includes(targetDestination);
+        });
+      }
 
       // Sort
       if (currentSort === 'price-low') {
@@ -80,10 +92,15 @@ export async function initActivitiesPage() {
       }
 
       // Update Count
-      countDisplay.textContent = `Showing ${filtered.length} ${filtered.length === 1 ? 'activity' : 'activities'}`;
+      let countText = `Showing ${filtered.length} ${filtered.length === 1 ? 'activity' : 'activities'}`;
+      if (targetDestination) {
+        const titleCase = urlParams.get('destination');
+        countText = `Showing ${filtered.length} ${filtered.length === 1 ? 'activity' : 'activities'} in ${titleCase}  <a href="/activities.html" style="margin-left: var(--space-xs); color: var(--color-primary); font-size: var(--fs-caption); text-decoration: underline;">(Clear)</a>`;
+      }
+      countDisplay.innerHTML = countText;
 
       if (filtered.length === 0) {
-        container.innerHTML = `<p class="text-muted text-center" style="grid-column: 1/-1; padding: 3rem;">No activities found for this category.</p>`;
+        container.innerHTML = `<p class="text-muted text-center" style="grid-column: 1/-1; padding: 3rem;">No activities found for this ${targetDestination ? 'destination' : 'category'}. <a href="/activities.html" style="color: var(--color-primary);">View all activities</a></p>`;
         return;
       }
 
@@ -110,6 +127,9 @@ export async function initActivitiesPage() {
                 <span>from </span>$${a.priceFrom}
               </span>
             </div>
+            <div style="margin-top: var(--space-md);">
+              <a href="/booking.html?activityId=${a.id}" class="btn btn-primary" style="width: 100%;">Book Now</a>
+            </div>
           </div>
         </div>
       `).join('');
@@ -124,6 +144,19 @@ export async function initActivitiesPage() {
     // Initialize
     renderFilters();
     renderGrid();
+
+    // Check for hash to auto-scroll and highlight specific activity
+    if (window.location.hash) {
+      setTimeout(() => {
+        const targetCard = document.querySelector(window.location.hash);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetCard.style.boxShadow = 'var(--shadow-glow-primary)';
+          targetCard.style.transition = 'box-shadow var(--duration-normal) var(--ease-out)';
+          setTimeout(() => targetCard.style.boxShadow = '', 2000); // fade out glow
+        }
+      }, 100); // Wait for DOM injection
+    }
 
   } catch (err) {
     console.error('Error loading activities:', err);

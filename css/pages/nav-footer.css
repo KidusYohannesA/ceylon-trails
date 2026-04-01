@@ -16,11 +16,17 @@
 }
 
 .navbar.scrolled {
-  background: rgba(26, 26, 46, 0.85);
+  background: rgba(26, 26, 46, 0.85); /* Dark Mode Navy */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(10, 110, 110, 0.95); /* Tropical Teal (var(--color-primary)) */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(10, 110, 110, 0.2);
 }
 
 .navbar.nav-hidden {
@@ -41,7 +47,7 @@
 }
 
 .nav-logo .logo-icon {
-  font-size: 1.75rem;
+  font-size: 2.625rem;
 }
 
 .nav-logo .logo-text {
@@ -51,7 +57,7 @@
 
 .nav-logo .logo-name {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.875rem;
   font-weight: var(--fw-bold);
   color: var(--color-white);
   line-height: 1.1;
@@ -59,12 +65,12 @@
 
 .nav-logo .logo-tagline {
   font-family: var(--font-accent);
-  font-size: 0.625rem;
+  font-size: 0.9375rem;
   letter-spacing: var(--ls-widest);
   text-transform: uppercase;
   color: var(--color-secondary);
   line-height: 1;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 /* ---- Navigation Links ---- */
@@ -76,7 +82,7 @@
 
 .nav-link {
   font-family: var(--font-accent);
-  font-size: var(--fs-body-sm);
+  font-size: 1.65rem;
   font-weight: var(--fw-medium);
   color: rgba(255, 255, 255, 0.75);
   letter-spacing: var(--ls-wide);
@@ -116,10 +122,15 @@
   z-index: 10;
 }
 
+.nav-actions .btn {
+  font-size: 1.4rem;
+  padding: 0.465rem 1.875rem;
+}
+
 /* ---- Theme Toggle ---- */
 .nav-theme-toggle {
-  width: 38px;
-  height: 38px;
+  width: 57px;
+  height: 57px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +138,7 @@
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all var(--duration-fast) var(--ease-out);
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   position: relative;
 }
@@ -151,34 +162,34 @@
 
 /* ---- Hamburger ---- */
 .nav-hamburger {
-  width: 36px;
-  height: 36px;
+  width: 54px;
+  height: 54px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 7.5px;
   cursor: pointer;
   z-index: 10;
 }
 
 .hamburger-line {
-  width: 22px;
-  height: 2px;
+  width: 33px;
+  height: 3px;
   background: var(--color-white);
   border-radius: var(--radius-full);
   transition: all var(--duration-normal) var(--ease-out);
 }
 
 .mobile-open .hamburger-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(10.5px) rotate(45deg);
 }
 .mobile-open .hamburger-line:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
 .mobile-open .hamburger-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-10.5px) rotate(-45deg);
 }
 
 /* ---- Mobile Menu ---- */
@@ -205,7 +216,7 @@
     right: 0;
     width: min(320px, 85vw);
     height: 100vh;
-    background: var(--color-dark);
+    background: var(--color-dark); /* Dark Mode */
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -215,6 +226,11 @@
     transition: transform var(--duration-slow) var(--ease-out);
     z-index: calc(var(--z-overlay) + 1);
     border-left: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  [data-theme="light"] .nav-menu {
+    background: rgba(10, 110, 110, 1); /* Tropical Teal (var(--color-primary)) */
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .mobile-open .nav-menu {
@@ -230,9 +246,19 @@
 /* ============================================================
    FOOTER
    ============================================================ */
+#footer {
+  background: var(--color-dark); /* Dark mode navy */
+}
+
+[data-theme="light"] #footer,
+[data-theme="light"] .footer-main.section-dark {
+  background: var(--color-primary); /* Light mode teal */
+}
+
 .footer-main {
   padding-top: var(--space-4xl);
   padding-bottom: var(--space-2xl);
+  background: transparent;
 }
 
 .footer-grid {

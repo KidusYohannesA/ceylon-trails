@@ -1,0 +1,306 @@
+/* css/pages/booking.css */
+
+.booking-section {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Stepper */
+.booking-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+.booking-stepper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-border);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.booking-stepper .step {
+  position: relative;
+  z-index: 2;
+  background: var(--color-bg);
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-family: var(--font-accent);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  border: 2px solid var(--color-border);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.booking-stepper .step.active {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: linear-gradient(rgba(10, 110, 110, 0.1), rgba(10, 110, 110, 0.1)), var(--color-bg);
+}
+
+.booking-stepper .step.completed {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* Form Area */
+.booking-form-wrapper {
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  min-height: 400px;
+}
+
+.form-step {
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.mt-2 { margin-top: var(--space-xs); }
+.mt-3 { margin-top: var(--space-sm); }
+.mt-4 { margin-top: var(--space-md); }
+.mt-6 { margin-top: var(--space-xl); }
+.mb-4 { margin-bottom: var(--space-md); }
+.pt-4 { padding-top: var(--space-md); }
+
+.border-t {
+  border-top: 1px solid var(--color-border-strong);
+}
+
+/* Flex utils */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Summary Sidebar */
+.booking-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-xl));
+}
+
+.summary-card {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-body-sm);
+}
+
+/* Activity Grid & Chips */
+.activity-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.activity-chip {
+  padding: var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: var(--color-bg-alt);
+  transition: all var(--duration-fast) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.activity-chip:hover:not(.disabled) {
+  border-color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+.activity-chip.selected {
+  border-color: var(--color-primary);
+  background: rgba(10, 110, 110, 0.15);
+}
+
+.activity-chip.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+.activity-chip strong {
+  font-family: var(--font-heading);
+}
+
+/* Detail Block */
+.detail-block {
+  padding: var(--space-md);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-md);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--color-border-strong);
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--color-primary);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+/* Mock Payment Form */
+.mock-payment-form {
+  background: var(--color-bg-alt);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+/* Booking Success */
+.booking-success {
+  padding: var(--space-3xl) var(--space-xl);
+  border-radius: var(--radius-xl);
+}
+
+/* Flatpickr Theme Adjustments - Dynamic Light/Dark Mode Support */
+.flatpickr-calendar {
+  background: var(--color-bg-elevated) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-xl) !important;
+  font-family: var(--font-body) !important;
+  color: var(--color-text) !important;
+}
+
+.flatpickr-day {
+  color: var(--color-text) !important;
+}
+
+/* Base selection states */
+.flatpickr-day.selected,
+.flatpickr-day.selected:focus,
+.flatpickr-day.selected:hover {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+/* Muted / disabled text states */
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay,
+.flatpickr-day.notAllowed,
+.flatpickr-day.notAllowed.prevMonthDay,
+.flatpickr-day.notAllowed.nextMonthDay {
+  color: var(--color-text-subtle) !important;
+}
+
+/* Header colors */
+.flatpickr-month,
+.flatpickr-current-month {
+  color: var(--color-text) !important;
+  fill: var(--color-text) !important;
+}
+
+/* Days of the week */
+.flatpickr-weekday {
+  color: var(--color-text-muted) !important;
+  font-weight: var(--fw-bold) !important;
+}
+
+/* Dropdown selections & arrows */
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+  color: var(--color-text) !important;
+  background: transparent !important;
+}
+
+.flatpickr-months .flatpickr-prev-month svg,
+.flatpickr-months .flatpickr-next-month svg {
+  fill: var(--color-text) !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-stepper .step {
+    font-size: var(--fs-caption);
+    padding: var(--space-2xs) var(--space-sm);
+  }
+
+  .booking-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

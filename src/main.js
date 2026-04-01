@@ -16,6 +16,7 @@ import { initFooter } from '../js/components/footer.js';
 import { initHomePage } from '../js/components/home.js';
 import { initDestinationsPage } from '../js/components/destinations.js';
 import { initActivitiesPage } from '../js/components/activities.js';
+import { initBookingForm } from '../js/components/booking-form.js';
 
 // ---- Initialize Core Components ----
 document.addEventListener('DOMContentLoaded', async () => {
@@ -32,6 +33,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await initDestinationsPage();
   } else if (path.includes('activities.html')) {
     await initActivitiesPage();
+  } else if (path.includes('booking.html')) {
+    await initBookingForm();
   }
 
   // Enable theme transitions only after initial paint is complete

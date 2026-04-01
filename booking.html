@@ -11,7 +11,7 @@
     </script>
     <style>
       html { background-color: #1A1A2E; }
-      html[data-theme="light"] { background-color: #F8F6F0; }
+      html[data-theme="light"] { background-color: #F4EFE6; }
       body { opacity: 0; }
       body.loaded { opacity: 1; transition: opacity 0.15s ease; }
     </style>
@@ -27,11 +27,156 @@
         <div class="container">
           <p class="overline">Reserve</p>
           <h1>Book Your Experience</h1>
-          <p class="lead" style="color: rgba(255,255,255,0.7);">Secure your adventure in just a few steps.</p>
+          <p class="lead text-muted">Secure your adventure in just a few steps.</p>
         </div>
       </section>
-      <!-- Booking form will be added in Phase 4 -->
-    </main>
+      <section class="booking-section container" style="margin-bottom: var(--space-4xl);">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="/css/pages/booking.css">
+
+        <div class="booking-grid">
+          <!-- Form Area -->
+          <div class="booking-main">
+            <!-- Stepper -->
+            <div class="booking-stepper">
+              <div class="step active" data-step="1">1. Activity</div>
+              <div class="step" data-step="2">2. Details</div>
+              <div class="step" data-step="3">3. Contact</div>
+              <div class="step" data-step="4">4. Payment</div>
+            </div>
+
+            <form id="booking-form" class="booking-form-wrapper glass">
+              
+              <!-- STEP 1: Activity -->
+              <div class="form-step active" id="step-1">
+                <h2 class="h3">Select Your Experiences</h2>
+                <p class="text-muted mt-2">Choose up to 4 activities.</p>
+                <div id="activity-grid" class="activity-selector-grid mt-4">
+                  <!-- Filled by JS -->
+                </div>
+                <div class="form-actions mt-4">
+                  <button type="button" class="btn btn-primary" id="btn-next-1" disabled>Continue to Details</button>
+                </div>
+              </div>
+
+              <!-- STEP 2: Details -->
+              <div class="form-step hidden" id="step-2">
+                <h2 class="h3">Dates & Guests</h2>
+                
+                <div id="universal-guest-toggle-container" class="universal-guest-toggle glass mt-4">
+                  <div class="flex-between">
+                    <div>
+                      <strong>Use same guests for all activities?</strong>
+                      <p class="text-muted mt-2" style="font-size: var(--fs-caption);">Set one guest count for your entire itinerary.</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="universal-guest-check">
+                      <span class="toggle-slider"></span>
+                    </label>
+                  </div>
+                  <div id="universal-guest-input-wrap" class="mt-4 hidden">
+                    <label class="form-label" for="universal-guests">Total Guests</label>
+                    <input type="number" id="universal-guests" class="form-input" min="1" max="20" value="2">
+                  </div>
+                </div>
+
+                <div id="details-container" class="mt-4">
+                  <!-- Dynamic child forms injected here -->
+                </div>
+
+                <div class="form-actions flex-between mt-4" style="width: 100%;">
+                  <button type="button" class="btn btn-ghost" id="btn-prev-2">Back</button>
+                  <button type="button" class="btn btn-primary" id="btn-next-2">Continue to Contact</button>
+                </div>
+              </div>
+
+              <!-- STEP 3: Contact -->
+              <div class="form-step hidden" id="step-3">
+                <h2 class="h3">Your Details</h2>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                  <label class="form-label" for="book-name">Full Name</label>
+                  <input type="text" id="book-name" class="form-input" placeholder="John Doe" required>
+                </div>
+                <div class="form-row mt-4">
+                  <div class="form-group">
+                    <label class="form-label" for="book-email">Email Address</label>
+                    <input type="email" id="book-email" class="form-input" placeholder="john@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="book-phone">Phone Number (Optional)</label>
+                    <input type="tel" id="book-phone" class="form-input" placeholder="+1 234 567 890">
+                  </div>
+                </div>
+                <div class="form-actions flex-between mt-4" style="width: 100%;">
+                  <button type="button" class="btn btn-ghost" id="btn-prev-3">Back</button>
+                  <button type="button" class="btn btn-primary" id="btn-next-3">Continue to Payment</button>
+                </div>
+              </div>
+
+              <!-- STEP 4: Payment (Mock) -->
+              <div class="form-step hidden" id="step-4">
+                <h2 class="h3">Payment Details</h2>
+                <p class="text-muted mt-2" style="margin-bottom: 1.5rem;">This is a secure mock payment gateway.</p>
+                
+                <div class="mock-payment-form mt-4">
+                  <div class="form-group">
+                    <label class="form-label" for="card-name">Name on Card</label>
+                    <input type="text" id="card-name" class="form-input" placeholder="John Doe" required>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label class="form-label" for="card-num">Card Number</label>
+                    <input type="text" id="card-num" class="form-input" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                  </div>
+                  <div class="form-row mt-4">
+                    <div class="form-group">
+                      <label class="form-label" for="card-exp">Expiry (MM/YY)</label>
+                      <input type="text" id="card-exp" class="form-input" placeholder="12/26" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="card-cvc">CVC</label>
+                      <input type="password" id="card-cvc" class="form-input" placeholder="123" maxlength="4" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-actions flex-between mt-4" style="width: 100%;">
+                  <button type="button" class="btn btn-ghost" id="btn-prev-4">Back</button>
+                  <button type="submit" class="btn btn-gold" id="btn-submit">Pay & Confirm</button>
+                </div>
+              </div>
+
+            </form>
+
+            <!-- Success State -->
+            <div id="booking-success" class="booking-success hidden text-center glass">
+              <div class="success-icon mb-4" style="font-size: 4rem; color: var(--color-success);">✅</div>
+              <h2 class="h2 text-primary">Booking Confirmed!</h2>
+              <p class="lead mt-4 text-muted">Thank you for booking with Ceylon Trails. An email confirmation has been sent.</p>
+              <p class="mt-4 text-lg"><strong>Reference:</strong> <span id="ref-id" class="text-secondary">-</span></p>
+              <a href="/activities.html" class="btn btn-primary mt-6">Back to Activities</a>
+            </div>
+
+          </div>
+
+          <!-- Summary Sidebar -->
+          <div class="booking-sidebar">
+            <div class="summary-card glass">
+              <h3 class="h4 summary-title">Order Summary</h3>
+              
+              <div id="summary-items-container" class="mt-4">
+                <div class="text-muted">No activities selected.</div>
+              </div>
+              
+              <div class="summary-total mt-4 pt-4 border-t">
+                <span class="text-lg">Total</span>
+                <strong id="sum-total" class="h2 text-secondary">$0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <footer id="footer"></footer>
     <script type="module" src="/src/main.js"></script>
   </body>

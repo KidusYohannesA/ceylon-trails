@@ -132,22 +132,42 @@ function renderWhyStrip() {
   <section class="why-strip section-sm" id="why-sri-lanka">
     <div class="container">
       <div class="why-stat reveal">
-        <div class="why-stat-icon">🏖️</div>
+        <div class="why-stat-icon">
+          <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" style="width: 48px; height: 48px; color: var(--color-secondary);">
+            <path d="M128,104a65.47,65.47,0,0,1,17.84-45.25,58.87,58.87,0,0,1,86.16,0Z" />
+            <path d="M128,104.52a64.26,64.26,0,0,1,87.42,23.26A63,63,0,0,1,221.81,176Z" />
+            <path d="M128,104a65.47,65.47,0,0,0-17.84-45.25,58.87,58.87,0,0,0-86.16,0Z" />
+            <path d="M128,104.52a64.26,64.26,0,0,0-87.42,23.26A63,63,0,0,0,34.19,176Z" />
+            <line x1="128" y1="104.52" x2="128" y2="224" />
+          </svg>
+        </div>
         <div class="why-stat-value" data-count="1340">0</div>
         <div class="why-stat-label">km of Coastline</div>
       </div>
       <div class="why-stat reveal">
-        <div class="why-stat-icon">🏛️</div>
+        <div class="why-stat-icon">
+          <svg viewBox="0 0 100 100" fill="currentColor" stroke="none" style="width: 48px; height: 48px; color: var(--color-secondary);">
+            <path d="M67.029,46.3v-4.407h-5.147c-0.416-4.049-2.859-7.496-6.294-9.32L50,9.863l-5.587,22.71c-3.436,1.823-5.878,5.27-6.295,9.32 H32.97V46.3c-17.552,6.824-30,23.872-30,43.837h94.059C97.029,70.172,84.582,53.124,67.029,46.3z"/>
+          </svg>
+        </div>
         <div class="why-stat-value" data-count="8">0</div>
         <div class="why-stat-label">UNESCO World Heritage Sites</div>
       </div>
       <div class="why-stat reveal">
-        <div class="why-stat-icon">🐘</div>
+        <div class="why-stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 48px; height: 48px; color: var(--color-secondary);">
+            <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+          </svg>
+        </div>
         <div class="why-stat-value" data-count="26">0</div>
         <div class="why-stat-label">National Parks</div>
       </div>
       <div class="why-stat reveal">
-        <div class="why-stat-icon">🌶️</div>
+        <div class="why-stat-icon">
+          <svg viewBox="0 0 100 100" fill="currentColor" stroke="none" style="width: 48px; height: 48px; color: var(--color-secondary);">
+            <path d="M81.417,48.562c-0.161-0.613-0.328-1.168-0.514-1.694c-0.033-0.094-0.073-0.179-0.122-0.26 c-0.364-0.593-1.211-0.772-2.37-0.96c-1.066-0.173-2.275-0.37-2.793-1.485c-0.408-0.875-0.116-1.812,0.191-2.804 c0.428-1.375,0.705-2.489,0.073-3.275c-0.117-0.145-0.247-0.297-0.379-0.448c0,0-0.226-0.248-0.288-0.314l-0.105-0.108 l-0.31-0.303c-0.099-0.092-0.205-0.188-0.319-0.288c-0.993-0.912-2.024-1.631-3.064-2.138c-1.438-0.699-2.963-1.053-4.533-1.053 c-2.718,0-5.611,1.072-8.369,3.099C44.012,47.194,28.677,49.515,17.48,51.207c-8.859,1.34-14.711,2.225-15.216,6.432 c-0.103,0.858,0.309,1.817,1.225,2.85c4.702,5.3,20.993,11.021,39.114,11.021c0,0,0,0,0,0c9.745,0,18.754-1.623,26.778-4.821 c5.858-2.335,12.593-5.991,12.681-13.605C82.078,51.669,81.861,50.15,81.417,48.562z M66.722,41.112 c-1.085,0.238-1.629,0.457-2.479,0.943c-0.442,0.247-0.807,0.49-1.274,0.83c-0.479,0.347-0.962,0.689-1.448,1.025 c-0.975,0.672-1.964,1.321-2.968,1.947c-4.014,2.507-8.297,4.568-12.706,6.235c-4.427,1.626-8.975,2.853-13.557,3.771 c-2.293,0.454-4.605,0.782-6.909,1.089l-3.458,0.422l-3.46,0.332l-0.033,0.003c-3.605,0.347-3.712-0.648-0.146-1.185 c4.569-0.684,9.118-1.407,13.6-2.436c4.48-1.021,8.893-2.334,13.157-4.026c4.263-1.691,8.376-3.757,12.256-6.2 c0.97-0.61,1.926-1.243,2.866-1.898l1.398-1c0.466-0.341,0.982-0.695,1.507-0.989c1.058-0.587,2.221-1.073,3.522-1.157 c0.636-0.038,1.332,0.056,1.94,0.278c0.301,0.107,0.614,0.258,0.87,0.406c0.302,0.172,0.539,0.346,0.793,0.534 C72.475,41.718,68.863,40.643,66.722,41.112z M90.118,38.305c-1.338,0.903-3.364,1.602-4.032,3.137 c-0.722,1.656-0.261,4.631-0.447,6.399c-0.375,3.536-2.075,7.374-2.168,4.47c-0.074-2.354-0.572-4.271-1.157-5.939 c-0.962-2.742-4.855-1.792-5.341-2.838c-0.463-0.996,1.904-4.108,0.075-6.387c-0.801-0.996-1.942-2.204-4.407-3.623 c-2.268-1.305,2.913-0.747,5.553,0.871c2.128,1.305,3.033,2.672,5.576,2.714c3.215,0.053,7.033-2.082,9.031-4.319 c0.852-0.954,2.372-2.553,3.069-3.848c0.766-1.421,2.223,0.886,1.809,1.714c-0.741,1.484-2.201,3.097-3.326,4.324 C92.934,36.531,91.869,37.125,90.118,38.305z"/>
+          </svg>
+        </div>
         <div class="why-stat-value" data-count="12">0</div>
         <div class="why-stat-label">Major Spice & Herb Varieties</div>
       </div>
@@ -214,7 +234,7 @@ function renderDestinations(dests) {
 
 function renderActivities(acts) {
   const cards = acts.map(a => `
-    <div class="activity-card reveal" id="activity-card-${a.id}">
+    <a href="/activities.html#activity-card-${a.id}" class="activity-card reveal" id="activity-card-${a.id}" style="display: block; text-decoration: none; color: inherit;">
       <div class="activity-card-img">
         <img src="${activityImages[a.id] || '/assets/images/activities/safari.png'}" alt="${a.name}" loading="lazy" />
         <span class="badge badge-primary activity-card-badge">${a.category}</span>
@@ -237,7 +257,7 @@ function renderActivities(acts) {
           </span>
         </div>
       </div>
-    </div>
+    </a>
   `).join('');
 
   return `

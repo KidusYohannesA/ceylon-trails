@@ -14,7 +14,7 @@
   font-weight: var(--fw-semibold);
   font-size: var(--fs-body-sm);
   letter-spacing: var(--ls-wide);
-  padding: var(--space-sm) var(--space-xl);
+  padding: 0.93rem 2.5rem;
   border-radius: var(--radius-full);
   border: 2px solid transparent;
   cursor: pointer;
@@ -93,12 +93,12 @@
 /* Button Sizes */
 .btn-lg {
   font-size: var(--fs-body);
-  padding: var(--space-md) var(--space-2xl);
+  padding: 1.25rem 3.75rem;
 }
 
 .btn-sm {
   font-size: var(--fs-caption);
-  padding: var(--space-2xs) var(--space-md);
+  padding: 0.31rem 1.25rem;
 }
 
 /* Button with icon */
